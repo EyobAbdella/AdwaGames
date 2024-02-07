@@ -1,5 +1,5 @@
-import GameCard from "./components/GameCard";
 import GameContainer from "./components/GameContainer";
+import Main from "./components/Main";
 import NavBar from "./components/NavBar";
 
 export default function App() {
@@ -7,6 +7,7 @@ export default function App() {
     <>
       <NavBar />
       {/* <GameCard /> */}
+      <Main />
       <GameContainer />
     </>
   );
