@@ -4,8 +4,8 @@ import GameCard from "./GameCard";
 import useGames from "../hooks/useGames";
 
 const GameContainer = () => {
-  // const { data } = useGames();
-  // console.log(data);
+  const { data } = useGames();
+  console.log(data);
 
   return (
     <div className='px-2 lg:px-16 mt-3'>

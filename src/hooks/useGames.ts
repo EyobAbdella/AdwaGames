@@ -31,16 +31,20 @@ interface Game {
     rating_top: number;
   }
 
-const apiClient = new APIClient<Game>("/games");
 
-const useGames = () => {
+  
+  const useGames = () => {
+  const apiClient = new APIClient<Game>("/games/3498/stores");
     return useQuery<FetchResponse<Game>, Error>({
-        queryKey: ["games"],
-        queryFn: async () => {
-            const response = await apiClient.getAll({});
-            return response.data
-        },
-    });
-};
+          queryKey: ["games"],
+          queryFn: async () => {
+                const response = await apiClient.getAll({});
+                return response.data
+            },
+        });
+    };
+    
+    
+
 
 export default useGames;

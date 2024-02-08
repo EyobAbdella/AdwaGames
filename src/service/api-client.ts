@@ -5,12 +5,10 @@ export interface FetchResponse<T> {
     next: string | null;
     results: T[];
 }
-
 const axiosInstance = axios.create({
     baseURL: "https://api.rawg.io/api",
     params: {
-        // key: import.meta.env.REACT_APP_RAWG_API_KEY
-        key: '37518599d4a246b2870d5cf705b67600'
+        key: import.meta.env.VITE_REACT_APP_RAWG_API_KEY
         
     }
 })
