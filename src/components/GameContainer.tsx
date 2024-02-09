@@ -1,6 +1,7 @@
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import GameCard from "./GameCard";
 import Game from "../types/Game";
+import { Link } from "react-router-dom";
 
 interface Props {
   title: string;
@@ -19,7 +20,9 @@ const GameContainer = ({ title, games }: Props) => {
       </div>
       <div className='pt-5 w-full min-h-full overflow-x-scroll flex scrollbar-hide scroll-smooth'>
         {games?.map((game) => (
-          <GameCard key={game.id} game={game} />
+          <Link to={`/games/${game.slug}`} key={game.id}>
+            <GameCard game={game} />
+          </Link>
         ))}
       </div>
     </div>

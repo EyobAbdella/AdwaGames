@@ -16,7 +16,7 @@ const GameCard = ({ game }: Props) => {
             <img
               className='w-60 h-40 object-cover rounded-lg'
               src={game.background_image}
-              alt='game'
+              alt={game.name}
             />
           </figure>
           <h1 className='text-slate-300 px-1 pt-1'>{game.name}</h1>

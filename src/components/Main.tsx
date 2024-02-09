@@ -13,7 +13,7 @@ const Main = ({ game }: Props) => {
         <img
           className='w-full h-full object-cover'
           src={game?.background_image}
-          alt='game'
+          alt={game?.name}
         />
         <div className='space-y-4 absolute top-1/2 lg:left-36 md:left-16 px-4'>
           <div className='flex space-x-2'>
@@ -26,7 +26,7 @@ const Main = ({ game }: Props) => {
             ))}
           </div>
           <h1 className='text-3xl md:text-5xl font-bold pb-5'>{game?.name}</h1>
-          <button className='bg-purple-800 hover:bg-purple-700 duration-200 rounded-full px-10 font-semibold py-2 shadow-[5px_5px_30px_5px_rgba(0,0,0,0.3)] shadow-purple-500'>
+          <button className='bg-purple-800 hover:bg-purple-700 duration-200 rounded-full px-10 font-semibold py-2 shadow-[0px_0px_30px_0px_rgba(0,0,0,0.3)] shadow-purple-500'>
             READ MORE
           </button>
         </div>

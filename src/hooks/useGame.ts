@@ -4,10 +4,10 @@ import Game from "../types/Game";
 
 const apiClient = new APIClient<Game>("/games");
 
-const useGame = (id: number) =>
+const useGame = (slug: string) =>
   useQuery({
-    queryKey: ["games", id],
-    queryFn: () => apiClient.get(id),
+    queryKey: ["games", slug],
+    queryFn: () => apiClient.get(slug),
   });
 
 export default useGame;
