@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Game from "../types/Game";
 
 interface Props {
@@ -27,7 +28,7 @@ const Main = ({ game }: Props) => {
           </div>
           <h1 className='text-3xl md:text-5xl font-bold pb-5'>{game?.name}</h1>
           <button className='bg-purple-800 hover:bg-purple-700 duration-200 rounded-full px-10 font-semibold py-2 shadow-[0px_0px_30px_0px_rgba(0,0,0,0.3)] shadow-purple-500'>
-            READ MORE
+            <Link to={`/games/${game?.slug}`}>READ MORE</Link>
           </button>
         </div>
       </div>

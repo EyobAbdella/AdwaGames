@@ -2,6 +2,7 @@ import { useState } from "react";
 import DropDown from "./DropDown";
 import { TiThMenu } from "react-icons/ti";
 import { CgClose } from "react-icons/cg";
+import { Link } from "react-router-dom";
 const NavBar = () => {
   const [nav, setNav] = useState<boolean>(false);
 
@@ -33,9 +34,13 @@ const NavBar = () => {
 
   return (
     <nav className='absolute z-[100] text-lg w-full flex items-center justify-between px-2 lg:px-20 py-2 md:py-4'>
-      <h1 className='text-2xl md:hidden'>LOGO</h1>
+      <Link to='/' className='text-2xl md:hidden'>
+        LOGO
+      </Link>
       <div className='hidden md:flex items-center justify-between space-x-9'>
-        <h1 className='text-2xl'>LOGO</h1>
+        <Link to='/' className='text-2xl'>
+          LOGO
+        </Link>
         <DropDown items={platforms} title='Platforms' />
         <DropDown items={genres} title='Genres' />
         <DropDown items={top} title='Top' />
