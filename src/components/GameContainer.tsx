@@ -2,7 +2,7 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import GameCard from "./GameCard";
 import Game from "../types/Game";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import useScrollSlider from "../hooks/useScrollSlider";
 
 interface Props {
   title: string;
@@ -11,20 +11,9 @@ interface Props {
 }
 
 const GameContainer = ({ title, games, rowId }: Props) => {
-  const [isAtStart, setIsAtStart] = useState<boolean>(true);
-  const [isAtEnd, setIsAtEnd] = useState<boolean>(false);
-
-  var slider = document.getElementById("slider" + rowId);
-  slider?.addEventListener("scroll", function () {
-    setIsAtStart(slider?.scrollLeft === 0);
-    setIsAtEnd(slider!.scrollLeft + slider!.clientWidth >= slider!.scrollWidth);
-  });
-  const slideLeft = () => {
-    slider!.scrollLeft -= 500;
-  };
-  const slideRight = () => {
-    slider!.scrollLeft += 500;
-  };
+  const { isAtEnd, isAtStart, slideLeft, slideRight } = useScrollSlider(
+    "slider" + rowId
+  );
   return (
     <div className='px-2 lg:px-16 mt-3'>
       <div className='flex items-center justify-between mb-2'>
@@ -32,14 +21,14 @@ const GameContainer = ({ title, games, rowId }: Props) => {
         <div className='flex items-center space-x-3'>
           <FaLongArrowAltLeft
             onClick={slideLeft}
-            className={`text-2xl cursor-pointer ${
-              isAtStart ? "text-gray-700" : ""
+            className={`text-white text-2xl cursor-pointer ${
+              isAtStart ? "text-gray-600" : ""
             }`}
           />
           <FaLongArrowAltRight
             onClick={slideRight}
-            className={`text-2xl cursor-pointer ${
-              isAtEnd ? "text-gray-700" : ""
+            className={`text-white text-2xl cursor-pointer ${
+              isAtEnd ? "text-gray-600" : ""
             }`}
           />
         </div>
