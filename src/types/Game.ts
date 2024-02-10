@@ -1,5 +1,6 @@
 import Developer from "./Developer";
 import Genre from "./Genre";
+import Platform from "./Platform";
 import Publisher from "./Publisher";
 
 export default interface Game {
@@ -9,7 +10,8 @@ export default interface Game {
   genres: Genre[];
   description_raw: string;
   background_image: string;
-  parent_platform: any;
+  parent_platforms: { id: string; platform: Platform }[];
+  platforms: Platform[];
   rating: number;
   website: string;
   released: string;
