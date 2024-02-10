@@ -17,7 +17,11 @@ const GameContainer = ({ title, games, rowId }: Props) => {
   return (
     <div className='px-2 lg:px-16 mt-3'>
       <div className='flex items-center justify-between mb-2'>
-        <h1 className='text-2xl font-bold font-mono'>{title}</h1>
+        {games ? (
+          <h1 className='text-2xl font-bold font-mono'>{title}</h1>
+        ) : (
+          <div className='skeleton w-52 h-7'></div>
+        )}
         <div className='flex items-center space-x-3'>
           <FaLongArrowAltLeft
             onClick={slideLeft}
@@ -36,11 +40,23 @@ const GameContainer = ({ title, games, rowId }: Props) => {
       <div
         id={"slider" + rowId}
         className='pt-5 w-full min-h-full overflow-x-scroll flex scrollbar-hide scroll-smooth'>
-        {games?.map((game) => (
-          <Link to={`/games/${game.slug}`} key={game.id}>
-            <GameCard game={game} />
-          </Link>
-        ))}
+        {games ? (
+          <>
+            {games?.map((game) => (
+              <Link to={`/games/${game.slug}`} key={game.id}>
+                <GameCard game={game} />
+              </Link>
+            ))}
+          </>
+        ) : (
+          <>
+            <div className='skeleton h-64 w-64 mx-2'></div>
+            <div className='skeleton h-64 w-64 mx-2'></div>
+            <div className='skeleton h-64 w-64 mx-2'></div>
+            <div className='skeleton h-64 w-64 mx-2'></div>
+            <div className='skeleton h-64 w-64 mx-2'></div>
+          </>
+        )}
       </div>
     </div>
   );

@@ -10,7 +10,11 @@ const GameDetail = () => {
   const { data: game, isLoading, error } = useGame(slug!);
   const { data } = useGameStore(game?.id!);
   if (isLoading)
-    return <span className='loading loading-ring w-40 my-auto mx-auto'></span>;
+    return (
+      <div className='text-center pt-16'>
+        <span className='loading loading-ring w-96 my-auto mx-auto'></span>
+      </div>
+    );
   if (error || !game) throw error;
   const store = data?.results;
   console.log(store);
