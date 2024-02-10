@@ -22,14 +22,19 @@ const Home = () => {
   return (
     <>
       <Main game={game} />
-      <GameContainer title='Top Games' games={topGames?.results} />
-      <GameContainer title='Up Coming' games={upComing?.results} />
-      <GameContainer title='New Released' games={newReleased?.results} />
+      <GameContainer rowId={1} title='Top Games' games={topGames?.results} />
+      <GameContainer rowId={2} title='Up Coming' games={upComing?.results} />
       <GameContainer
+        rowId={3}
+        title='New Released'
+        games={newReleased?.results}
+      />
+      <GameContainer
+        rowId={4}
         title='Educational Games'
         games={educationalGames?.results}
       />
-      <GameContainer title='Esports Games' games={eSports?.results} />
+      <GameContainer rowId={5} title='Esports Games' games={eSports?.results} />
     </>
   );
 };

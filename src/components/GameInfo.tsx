@@ -30,7 +30,7 @@ const GameInfo = ({ game }: Props) => {
           </div>
         </div>
         <div className='flex items-center w-96 space-x-2 text-white '>
-          <p className='w-24 text-slate-300 text-sm'>Developer: </p>
+          <p className='min-w-24 text-slate-300 text-sm'>Developer: </p>
           <div className='flex space-x-1'>
             {developers.map((developer, index) => (
               <React.Fragment key={developer.id}>
@@ -41,21 +41,21 @@ const GameInfo = ({ game }: Props) => {
           </div>
         </div>
         <div className='flex items-center w-96 space-x-2 text-white '>
-          <p className='w-32 text-slate-300 text-sm'>Website: </p>
+          <p className='min-w-24 text-slate-300 text-sm'>Website: </p>
           <Link to={game?.website} className='w-full'>
             {game?.website}
           </Link>
         </div>
         <div className='flex items-center w-96 space-x-2 text-white '>
-          <p className='w-24 text-slate-300 text-sm'>Release date: </p>
+          <p className='min-w-24 text-slate-300 text-sm'>Release date: </p>
           <p>{new Date(game?.released).toLocaleDateString("en-US")}</p>
         </div>
         <div className='flex items-center w-96 space-x-2 text-white '>
-          <p className='w-24 text-slate-300 text-sm'>Updated: </p>
+          <p className='min-w-24 text-slate-300 text-sm'>Updated: </p>
           <p>{new Date(game?.updated).toLocaleDateString("en-US")}</p>
         </div>
         <div className='flex items-center w-96 space-x-2 text-white '>
-          <p className='w-24 text-slate-300 text-sm'>Publisher: </p>
+          <p className='min-w-24 text-slate-300 text-sm'>Publisher: </p>
           <div className='flex space-x-1'>
             {publishers.map((publisher, index) => (
               <React.Fragment key={publisher?.id}>

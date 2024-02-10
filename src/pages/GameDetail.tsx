@@ -10,7 +10,6 @@ const GameDetail = () => {
   if (isLoading)
     return <span className='loading loading-ring w-40 my-auto mx-auto'></span>;
   if (error || !game) throw error;
-  console.log(game);
   return (
     <div className='relative pb-4'>
       <div className='px-16 absolute w-full h-[500px] bg-gradient-to-tr from-[#10071b]'></div>
