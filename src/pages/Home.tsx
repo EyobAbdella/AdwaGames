@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import GameContainer from "../components/GameContainer";
 import Main from "../components/Main";
 import useFetchGames from "../hooks/useFetchGames";
@@ -35,6 +36,7 @@ const Home = () => {
         games={educationalGames?.results}
       />
       <GameContainer rowId={5} title='Esports Games' games={eSports?.results} />
+      <Footer />
     </>
   );
 };

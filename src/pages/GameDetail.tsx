@@ -4,6 +4,7 @@ import GameScreenShot from "../components/GameScreenshot";
 import PlatformIcons from "../components/PlatformIcons";
 import useGame from "../hooks/useGame";
 import useGameStore from "../hooks/useGameStore";
+import Footer from "../components/Footer";
 
 const GameDetail = () => {
   const { slug } = useParams();
@@ -19,7 +20,7 @@ const GameDetail = () => {
   const store = data?.results;
   console.log(store);
   return (
-    <div className='relative pb-4'>
+    <div className='relative'>
       <div className='px-16 absolute w-full h-[500px] bg-gradient-to-tr from-[#10071b]'></div>
 
       <figure>
@@ -40,6 +41,7 @@ const GameDetail = () => {
       </div>
       <GameInfo game={game} />
       <GameScreenShot gameId={game.id} />
+      <Footer />
     </div>
   );
 };
